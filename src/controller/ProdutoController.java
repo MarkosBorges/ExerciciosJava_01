@@ -1,7 +1,14 @@
 package controller;
+import model.Produto;
 
 import org.w3c.dom.ls.LSOutput;
 
+//Construtor = chamamos de metodo padrao
+
+//1>Introducao ao encapsulamento (public, private, protected ...)
+//2>Metodos acessores
+//3>MVC (Model View COntrol)
+//4>toString (gerar)
 public class ProdutoController {
 
     public static void main(String[] args) {
@@ -9,6 +16,8 @@ public class ProdutoController {
         System.out.println(produto1.getNome());
         System.out.println(produto1.getValor());
         System.out.println(produto1.getEstoque());
+        produto1.setEstoque(-100);
+        System.out.println("Estoque Atualizado" + produto1.getEstoque());
         System.out.println();
 
         Produto produto2 = new Produto("Massa", 5.50, 100);//produto2 = instancia da classe produto ou simplesmente um OBJETO
@@ -17,67 +26,16 @@ public class ProdutoController {
         System.out.println(produto2.getEstoque());
         System.out.println();
 
+        //toString
         Produto produto3 = new Produto();
-        System.out.println(produto3.getNome());
-        System.out.println(produto3.getValor());
-        System.out.println(produto3.getEstoque());
+        System.out.println(produto3.toString());
         System.out.println();
 
-        Produto produto4 = new Produto();
-        System.out.println(produto4.getNome());
-        System.out.println(produto4.getValor());
-        System.out.println(produto4.getEstoque());
+        Produto produto4 = new Produto("Batata KG", 3.80, 1000);
+        System.out.println(produto4.toString());
+        System.out.println();
 
-        //Construtor = chamamos de metodo padrao
-
-        //Introducao ao encapsulamento (public, private, protected ...)
-        //Metodos acessores
-        //MVC (Model View COntrol)
+        Produto produto5 = new Produto("Feijão", 4.50, 80);
+        System.out.println(produto5.toString());
     }
 }
-class Produto{
-    private String nome; //tipo classe comeca com letra maiuscula
-    private double valor;
-    private int estoque;
-
-    public Produto() {//COntrutor padrao/vazio
-    }
-
-    public Produto(String nome, double valor, int estoque) {//Contrutor com todos os atributos
-        this.nome = nome;
-        this.valor = valor;
-        this.estoque = estoque;
-    }
-/*    public Produto(String nome){
-        this.nome = nome;
-    }
-*/
-    //============ GETTERS (leem valores dos atrib) & SETTERS (altera os valores do atrbt)  ===========
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public double getValor() {
-        return valor;
-    }
-
-    public void setValor(double valor) {
-        this.valor = valor;
-    }
-
-    public int getEstoque() {
-        return estoque;
-    }
-
-    public void setEstoque(int estoque) {
-        int novoEstoque = this.estoque + estoque;
-        if(this.estoque > 0){
-            this.estoque = estoque;
-        }
-
-    }
-}// FIM CLASSE PRODUTO
