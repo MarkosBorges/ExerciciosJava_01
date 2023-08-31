@@ -12,6 +12,9 @@ import java.util.List;
 //2>Metodos acessores
 //3>MVC (Model View COntrol)
 //4>toString (gerar) - (converte o objeto para String)
+
+//5>Aulas Coleções + List
+
 public class ProdutoController {
 
     public static void main(String[] args) {
@@ -43,6 +46,7 @@ public class ProdutoController {
         //Ele vai até a classe object para converter
 
         //---------------------------
+        // ------ CRIANDO COLECAO E ADD OBJETOS NESSA COLECAO
         List<Produto> produtos = new ArrayList<>();
         produtos.add(produto1);
         produtos.add(produto2);
@@ -50,6 +54,18 @@ public class ProdutoController {
         produtos.add(produto4);
         produtos.add(produto5);
         System.out.println(produtos);
+
+        List<Produto> produtos2 = new ArrayList<>();
+        produtos2.add(produto1);
+        System.out.println(produtos2);
+
+        //List = estrutura de dados
+        // <Produto> = Objetos dentro da estrutura da dados
+        // produtos = variável
+        // new ArrayList<>() = chamando o construtor da classe ArrayList
+
+        // -----------------------------------------------------------------
+
 
     }
 }
